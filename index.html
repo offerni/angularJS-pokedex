@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PokeDex</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-app="pokedexApp">
+
+
+<div class="App" ng-controller="PokeDexController as vm">
+    <img class="pokeball-back" id="pokeballBack" src="//hanashiro.github.io/pokedex/images/pokeball.svg" alt="">
+
+    <input type="text" id="pokeFilter" placeholder="Search " ng-model="vm.searchText" />
+
+    <ul class="poke-list" id="pokeList">
+        <poke-list-item-component ng-repeat="pkm in vm.pkmList" pkm="pkm"></poke-list-item-component>
+    </ul>
+</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js" ></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.min.js" ></script>
+
+<script src="js/App.js"></script>
+<script src="js/controllers/PokeDexController.js"></script>
+<script src="js/components/PokeListItem/PokeListItemComponent.js"></script>
+</body>
+</html>
