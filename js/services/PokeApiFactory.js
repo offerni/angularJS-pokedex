@@ -25,6 +25,11 @@ function PokeApiFactory($http) {
                     return pkmList
                 })
         },
+        getPkm: function(pkm) {
+            return $http.get(`${this.url}pokemon/${pkm.number}`)
+                .then(response => response.data)
+        },
+
         getNumberFromURL: function(url) {
             return parseInt(url.replace(/.*\/(\d+)\/$/, '$1'));
         }

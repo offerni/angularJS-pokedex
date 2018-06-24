@@ -1,1 +1,1 @@
-angular.module('pokedexApp', []);
+angular.module('pokedexApp', ['ngRoute']);

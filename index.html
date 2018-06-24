@@ -8,21 +8,20 @@
 <body ng-app="pokedexApp">
 
 
-<div class="App" ng-controller="PokeDexController as vm">
+<div class="App">
     <img roll-on-scroll class="pokeball-back" id="pokeballBack" src="//hanashiro.github.io/pokedex/images/pokeball.svg" alt="">
 
-    <input type="text" id="pokeFilter" placeholder="Search " ng-model="vm.searchText" />
+    <ng-view></ng-view>
 
-    <ul class="poke-list" id="pokeList">
-        <poke-list-item-component ng-repeat="pkm in vm.pkmList | filter:vm.searchText" pkm="pkm"></poke-list-item-component>
-    </ul>
 </div>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js" ></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.min.js" ></script>
 
 <script src="js/App.js"></script>
+<script src="js/Routes.js"></script>
 <script src="js/controllers/PokeDexController.js"></script>
+<script src="js/controllers/PokeInfoController.js"></script>
 <script src="js/components/PokeListItem/PokeListItemComponent.js"></script>
 <script src="js/directives/RolOnScrollDirective.js"></script>
 <script src="js/services/PokeApiFactory.js"></script>
